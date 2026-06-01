@@ -126,7 +126,6 @@ def generate_daily_check():
         return "You don't need another course today. You need to finish what you already started."
 
 # ─── API Routes ─────────────────────────────────────────────────────────────────
-@app.route('/chat', methods=['POST'])
 @app.route('/api/chat', methods=['POST'])
 def chat():
     init_db()
@@ -164,7 +163,6 @@ def chat():
         "response": ai_response
     })
 
-@app.route('/conversations', methods=['GET'])
 @app.route('/api/conversations', methods=['GET'])
 def get_conversations():
     init_db()
@@ -175,7 +173,6 @@ def get_conversations():
     conn.close()
     return jsonify(conversations)
 
-@app.route('/conversations/<int:id>', methods=['GET'])
 @app.route('/api/conversations/<int:id>', methods=['GET'])
 def get_conversation(id):
     init_db()
@@ -186,7 +183,6 @@ def get_conversation(id):
     conn.close()
     return jsonify(messages)
 
-@app.route('/conversations/<int:id>', methods=['DELETE'])
 @app.route('/api/conversations/<int:id>', methods=['DELETE'])
 def delete_conversation(id):
     init_db()
@@ -198,7 +194,6 @@ def delete_conversation(id):
     conn.close()
     return jsonify({"success": True})
 
-@app.route('/insights', methods=['POST'])
 @app.route('/api/insights', methods=['POST'])
 def save_insight():
     init_db()
@@ -214,7 +209,6 @@ def save_insight():
     conn.close()
     return jsonify({"success": True})
 
-@app.route('/insights', methods=['GET'])
 @app.route('/api/insights', methods=['GET'])
 def get_insights():
     init_db()
@@ -225,7 +219,6 @@ def get_insights():
     conn.close()
     return jsonify(insights)
 
-@app.route('/insights/<int:id>', methods=['DELETE'])
 @app.route('/api/insights/<int:id>', methods=['DELETE'])
 def delete_insight(id):
     init_db()
@@ -236,14 +229,12 @@ def delete_insight(id):
     conn.close()
     return jsonify({"success": True})
 
-@app.route('/daily-check', methods=['GET'])
 @app.route('/api/daily-check', methods=['GET'])
 def daily_check():
     msg = generate_daily_check()
     return jsonify({"message": msg})
 
 # Health check
-@app.route('/health', methods=['GET'])
 @app.route('/api/health', methods=['GET'])
 def health():
     return jsonify({"status": "ok"})
