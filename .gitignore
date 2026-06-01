@@ -10,6 +10,7 @@ __pycache__/
 dist/
 build/
 .env
+backend/.env
 .venv
 venv/
 *.log

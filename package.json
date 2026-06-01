@@ -4,7 +4,7 @@
   "description": "VeritasAI - MindMirror AI Application",
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
-    "dev": "npm run dev-frontend",
+    "dev": "cd frontend && npm run dev",
     "dev-frontend": "cd frontend && npm run dev",
     "preview": "cd frontend && npm run preview",
     "lint": "cd frontend && npm run lint"
