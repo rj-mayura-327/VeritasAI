@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
   "framework": null,
   "rewrites": [
@@ -10,6 +10,8 @@
     }
   ],
   "functions": {
-    "api/index.py": {}
+    "api/index.py": {
+      "maxDuration": 30
+    }
   }
 }
