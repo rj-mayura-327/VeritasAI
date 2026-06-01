@@ -10,6 +10,6 @@
     "lint": "cd frontend && npm run lint"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": "20.x"
   }
 }
