@@ -1,17 +1,2 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "veritas-ai"
-version = "0.1.0"
-description = "Veritas AI chatbot backend for deployment"
-requires-python = ">=3.9"
-dependencies = [
-    "Flask==3.0.0",
-    "flask-cors==4.0.0",
-    "requests>=2.31.0"
-]
-
-[tool.vercel]
-entrypoint = "backend.app:app"
+[tool.setuptools]
+packages = []
